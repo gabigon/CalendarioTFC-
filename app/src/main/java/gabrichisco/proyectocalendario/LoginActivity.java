@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -45,12 +44,9 @@ public class LoginActivity extends Activity {
         }
 
         loginBtn.setOnClickListener(v -> {
-            // Comprobar el email y la contraseña
             if (isValidEmail(email.getText().toString())) {
                 login();
             } else {
-                // Igual es mejor comprobar los dos campos por separado y mostrar un mensaje por cada uno
-//                    Toast.makeText(LoginActivity.this, "Email no válido", Toast.LENGTH_LONG);
                 Toast.makeText(LoginActivity.this, getResources().getString(R.string.mensaje_cuando_la_cagas), Toast.LENGTH_LONG).show();
             }
         });
